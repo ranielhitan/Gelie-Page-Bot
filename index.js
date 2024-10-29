@@ -64,7 +64,25 @@ const sendMessengerProfileRequest = async (method, url, data = null) => {
     throw error;
   }
 };
-
+//autopost
+async function post() {
+  console.log("Auto 1 Hour Post Enabled");
+  const autoPost = cron.schedule(`0 */1 * * *`, async () => {
+    const {
+      content,
+      author
+    } = (await axios.get(`https://api.realinspire.tech/v1/quotes/random`)).data[0];
+    await api.publishPost(`💭 Remember...
+${content}
+-${author}
+`, PAGE_ACCESS_TOKEN);
+    console.log("Triggered autopost.");
+  }, {
+    scheduled: true,
+    timezone: "Asia/Manila"
+  });
+  autoPost.start();
+}
 // Load all command files from the "commands" directory
 const loadCommands = () => {
   return fs.readdirSync(COMMANDS_PATH)
