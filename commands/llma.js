@@ -3,8 +3,8 @@ const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
   name: 'llma',
-  description: 'Interact with LLMQ',
-  usage: 'llma [your message]',
+  description: 'Interact with LLMA META AI',
+  usage: 'llma [your Question or Message]',
   author: 'coffee',
 
   async execute(senderId, args, pageAccessToken) {
