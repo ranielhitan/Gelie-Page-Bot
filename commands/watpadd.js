@@ -2,9 +2,9 @@ const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
-  name: 'watpadd',
+  name: 'wattpad',
   description: 'Search Wattpad Stories',
-  usage: 'watpadd [story title]',
+  usage: 'wattpad [story title]',
   author: 'coffee',
 
   async execute(senderId, args, pageAccessToken) {
