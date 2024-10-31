@@ -16,7 +16,7 @@ const title = response.data.title;
 const username = response.data.username;
 const displayname = response.data.displayname;
 
-  const message = `Title: ${title}\nUsername: ${username}\nDisplay Name: ${displayname}\n\n​🇩​​🇴​​🇼​​🇳​​🇱​​🇴​​🇦​​🇩​​🇮​​🇳​​🇬​ ​🇵​​🇱​​🇪​​🇦​​🇸​​🇪​ ​🇼​​🇦​​🇮​​🇹​...
+  const message = `Title: ${title}\nUsername: ${username}\nDisplay Name: ${displayname}\n\n𝕯𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖎𝖓𝖌 𝕻𝖑𝖊𝖆𝖘𝖊 𝖂𝖆𝖎𝖙...
 `;
   await sendMessage(senderId, { text: message }, pageAccessToken);
 
