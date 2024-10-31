@@ -3,7 +3,7 @@ const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
 name: 'shoti',
-usage: 'lyrics [song name]',
+usage: 'shoti',
 description: 'Generate a random TikTok video.',
 author: 'Jerome',
 async execute(senderId, args, pageAccessToken, sendMessage) {
