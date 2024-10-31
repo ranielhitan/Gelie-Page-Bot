@@ -13,7 +13,7 @@ module.exports = {
 
     try {
       const { data: { result } } = await axios.get(`https://joshweb.click/api/genmicro?name=${encodeURIComponent(prompt)}&uid=${senderId}`);
-      sendMessage(senderId, { text: result.email "\n" result.password }, pageAccessToken);
+      sendMessage(senderId, { text: result.email \n result.password }, pageAccessToken);
     } catch {
       sendMessage(senderId, { text: 'There was an error generating the content. Please try again later.' }, pageAccessToken);
     }
