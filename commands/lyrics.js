@@ -8,6 +8,15 @@ module.exports = {
   author: 'coffee',
 
   async execute(senderId, args, pageAccessToken) {
+if (!args || args.length === 0) {
+      // Send message requesting a prompt if missing
+      await sendMessage(senderId, {
+        text: '❌ 𝗣𝗹𝗲𝗮𝘀𝗲 𝗽𝗿𝗼𝘃𝗶𝗱𝗲 𝘆𝗼𝘂𝗿 𝗽𝗿𝗼𝗺𝗽𝘁\n\n𝗘𝘅𝗮𝗺𝗽𝗹𝗲: lyrics nang dumatin ka.'
+      }, pageAccessToken);
+      return;  // Exit the function if no prompt is provided
+    }
+
+    
     try {
       const { data: { result } } = await axios.get(`https://joshweb.click/search/lyrics?q=${encodeURIComponent(args.join(' '))}`);
       if (result?.lyrics) {
