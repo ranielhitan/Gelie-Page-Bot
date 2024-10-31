@@ -2,7 +2,7 @@ const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
-  name: 'microsoft generator',
+  name: 'micgen',
   description: 'Generate Random Account on Microsoft',
   usage: 'micgen [name or text]',
   author: 'coffee',
