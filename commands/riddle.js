@@ -2,7 +2,7 @@ const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
-  name: 'ai',
+  name: 'riddle',
   description: 'Interact with ChronoAI',
   usage: 'ai [your question]',
   author: 'coffee',
