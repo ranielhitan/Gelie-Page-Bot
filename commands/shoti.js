@@ -14,7 +14,7 @@ const title = response.data.title;
 const username = response.data.username;
 const tiktokUrl = response.data.tiktokUrl;
 
-  const message = `Title: ${title}\nUsername: ${username}\nTikTok URL: ${tiktokUrl}`;
+  const message = `Title: ${title}\nTikTok URL: ${tiktokUrl}`;
   await sendMessage(senderId, { text: message }, pageAccessToken);
 
   const videoMessage = {
