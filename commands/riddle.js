@@ -3,13 +3,11 @@ const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
   name: 'riddle',
-  description: 'Interact with ChronoAI',
-  usage: 'ai [your question]',
+  description: 'Get a logic and answer',
+  usage: 'riddle',
   author: 'coffee',
 
   async execute(senderId, args, pageAccessToken) {
-    const prompt = args.join(' ');
-    if (!prompt) return sendMessage(senderId, { text: "Usage: ai <question>" }, pageAccessToken);
 
     try {
       const apiUrl = 'https://ccproject10-df3227f754.onlitegix.com/api/randomriddle';
