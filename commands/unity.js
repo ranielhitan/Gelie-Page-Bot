@@ -15,7 +15,7 @@ module.exports = {
     try {
        const { data } = await axios.get(`https://api.kenliejugarap.com/unity/?question=${encodeURIComponent(prompt)}`);
       
-      sendMessage(senderId, { text: data.extract }, pageAccessToken);
+      sendMessage(senderId, { text: data.response }, pageAccessToken);
     } catch {
       sendMessage(senderId, { text: 'There was an error generating the content. Please try again later.' }, pageAccessToken);
     }
