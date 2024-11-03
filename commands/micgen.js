@@ -12,12 +12,12 @@ module.exports = {
     try {
       const apiUrl = 'https://joshweb.click/api/genmicro?name=${encodeURIComponent(prompt)}';
 const response = await axios.get(apiUrl);
-const user = response.data.email;
-const pass = response.data.password;
+const user = response.data.result.email;
+const pass = response.data.result.password;
 //const username = response.data.username;
 //const displayname = response.data.displayname;
 
-       const mes = `Microsoft Account\nUsername: ${user}\nAnswer: ${pass}`;
+       const mes = `Microsoft Account\nUsername: ${user}\nPassword: ${pass}`;
   await sendMessage(senderId, { text: mes }, pageAccessToken);
     } catch {
       sendMessage(senderId, { text: 'There was an error generating the content. Please try again later.' }, pageAccessToken);
