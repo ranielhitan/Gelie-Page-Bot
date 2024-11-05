@@ -15,7 +15,7 @@ const videoUrl = response.data.videoDownloadLink;
 //const username = response.data.username;
 //const tiktokUrl = response.data.tiktokUrl;
 
-  const message = `𝕯𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖎𝖓𝖌...`;
+  const message = `Sending...`;
   await sendMessage(senderId, { text: message }, pageAccessToken);
 
   const videoMessage = {
