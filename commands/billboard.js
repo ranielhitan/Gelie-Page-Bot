@@ -15,7 +15,7 @@ module.exports = {
     }
 
     try {
-      const response = await axios.get(`https://api-canvass.vercel.app/?prompt=${encodeURIComponent(prompt)}`);
+      const response = await axios.get(`https://api-canvass.vercel.app/billboard?text=kupal+kaba${encodeURIComponent(prompt)}`);
       const imageUrl = response.data.url; // Assuming the API returns an object with a 'url' property
 
       if (imageUrl) {
