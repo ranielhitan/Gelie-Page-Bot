@@ -22,7 +22,7 @@ module.exports = {
     const apiUrl = `https://api-canvass.vercel.app/lexi?text=${encodeURIComponent(prompt)}`; 
     
     
-    await sendMessage(senderId, { text: 'Heres your damn image, bitch...' }, pageAccessToken);
+    await sendMessage(senderId, { text: '⌛Here\'s your damn image, bitch...' }, pageAccessToken);
 
     try {
      

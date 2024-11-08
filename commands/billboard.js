@@ -12,7 +12,7 @@ module.exports = {
     if (!args || args.length === 0) {
       
       await sendMessage(senderId, {
-        text: 'you need to provide prompt'
+        text: 'you need to provide prompt stupid idiot.'
       }, pageAccessToken);
       return; 
     }
