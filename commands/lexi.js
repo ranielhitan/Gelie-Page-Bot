@@ -22,13 +22,13 @@ module.exports = {
     const apiUrl = `https://api-canvass.vercel.app/lexi?text=${encodeURIComponent(prompt)}`; 
     
     
-    await sendMessage(senderId, { text: '⌛ 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗶𝗻𝗴 𝗶𝗺𝗮𝗴𝗲 𝗯𝗮𝘀𝗲𝗱 𝗼𝗻 𝘆𝗼𝘂𝗿 𝗽𝗿𝗼𝗺𝗽𝘁, 𝗽𝗹𝗲𝗮𝘀𝗲 𝘄𝗮𝗶𝘁...' }, pageAccessToken);
+    await sendMessage(senderId, { text: 'Heres your damn image, bitch...' }, pageAccessToken);
 
     try {
      
       await sendMessage(senderId, {
         attachment: {
-          type: 'Heres your damn image, bitch',
+          type: 'image',
           payload: {
             url: apiUrl 
           }

@@ -28,7 +28,7 @@ module.exports = {
      
       await sendMessage(senderId, {
         attachment: {
-          type: 'Heres your damn image, bitch',
+          type: 'image',
           payload: {
             url: apiUrl 
           }
