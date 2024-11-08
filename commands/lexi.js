@@ -1,9 +1,9 @@
- const axios = require('axios');
+const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
-  name: 'billboard', 
-  description: 'generates a billboard image based on a prompt',
+  name: 'lexi', 
+  description: 'generates a lexi image based on a prompt',
   usage: 'lexi [prompt]', 
   author: 'Gelie', 
   
@@ -19,7 +19,7 @@ module.exports = {
 
     
     const prompt = args.join(' ');
-    const apiUrl = `https://api-canvass.vercel.app/billboard?text=kupal+kaba${encodeURIComponent(prompt)}`; 
+    const apiUrl = `https://api-canvass.vercel.app/lexi?text=${encodeURIComponent(prompt)}`; 
     
     
     await sendMessage(senderId, { text: '⌛ 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗶𝗻𝗴 𝗶𝗺𝗮𝗴𝗲 𝗯𝗮𝘀𝗲𝗱 𝗼𝗻 𝘆𝗼𝘂𝗿 𝗽𝗿𝗼𝗺𝗽𝘁, 𝗽𝗹𝗲𝗮𝘀𝗲 𝘄𝗮𝗶𝘁...' }, pageAccessToken);
