@@ -19,7 +19,7 @@ module.exports = {
 
     
     const prompt = args.join(' ');
-    const apiUrl = `https://api-canvass.vercel.app/phub?text=${encodeURIComponent(prompt)}`; 
+    const apiUrl = `https://api-canvass.vercel.app/phub?text=Blurd+shit&name=${encodeURIComponent(prompt)}`; 
     
     
     await sendMessage(senderId, { text: '⌛Sending your damn image, bitch...' }, pageAccessToken);
