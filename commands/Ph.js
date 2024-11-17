@@ -1,23 +1,47 @@
-const axios = require('axios');
+ const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
-  name: 'ph',
-  description: 'Generate a hack meme',
-  usage: 'hack <name> <uid>',
-  author: 'Developer’s name',
-
+  name: 'ph', 
+  description: 'generates image based on a prompt',
+  usage: 'ph (prompt', 
+  author: 'Gelie', 
+  
   async execute(senderId, args, pageAccessToken) {
-    if (!args || !Array.isArray(args) || args.length < 2) {
-      await sendMessage(senderId, { text: 'ph (prompt).' }, pageAccessToken);
-      return;
+ 
+    if (!args || args.length === 0) {
+      
+      await sendMessage(senderId, {
+        text: 'you need to provide prompt stupid idiot.'
+      }, pageAccessToken);
+      return; 
     }
 
+    
+    const prompt = args.join(' ');
+    const apiUrl = `https://api-canvass.vercel.app/phub?text=Blurd+shit&name=Mark+Zuckerberg&id=${encodeURIComponent(prompt)}`; 
+    
+    
+    await sendMessage(senderId, { text: '⌛Sending your damn image, bitch...' }, pageAccessToken);
+
     try {
-      const apiUrl = `https://api-canvass.vercel.app/phub?text=Blurd+shit&name=Mark+Zuckerberg&id=4${encodeURIComponent}`;
-      await sendMessage(senderId, { attachment: { type: 'image', payload: { url: apiUrl } } }, pageAccessToken);
+     
+      await sendMessage(senderId, {
+        attachment: {
+          type: 'image',
+          payload: {
+            url: apiUrl 
+          }
+        }
+      }, pageAccessToken);
+
     } catch (error) {
-      await sendMessage(senderId, { text: 'Error: Could not generate hack meme.' }, pageAccessToken);
+     
+      console.error('Shit, something went wrong. Fucking API screwed up.', error);
+      
+      await sendMessage(senderId, {
+        text: 'An error occurred while generating the image. Please try again later.'
+      }, pageAccessToken);
     }
   }
 };
