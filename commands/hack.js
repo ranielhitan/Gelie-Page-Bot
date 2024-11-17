@@ -9,7 +9,7 @@ module.exports = {
 
   async execute(senderId, args, pageAccessToken) {
     if (!args || !Array.isArray(args) || args.length < 2) {
-      await sendMessage(senderId, { text: 'Usage: hack <name> | <uid>' }, pageAccessToken);
+      await sendMessage(senderId, { text: 'Usage: hack <name> <uid>' }, pageAccessToken);
       return;
     }
 
