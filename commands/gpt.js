@@ -2,7 +2,7 @@ const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
-  name: 'gpt',
+  name: 'gpt4',
   description: 'Interact with GPT-4o',
   usage: 'gpt4 [your message]',
   author: 'coffee',
@@ -12,7 +12,7 @@ module.exports = {
     if (!prompt) return sendMessage(senderId, { text: "Usage: gpt4 <question>" }, pageAccessToken);
 
     try {
-      const response = await axios.get(`https://api.kenliejugarap.com/unity/?question=${encodeURIComponent(prompt)}`);
+      const response = await axios.get(`https://api.kenliejugarap.com/unity/?question=${encodeURIComponent(prompt)}&uid=${senderId}`);
       const result = response.data.result;
       sendMessage(senderId, { text: result }, pageAccessToken);
     } catch (error) {
