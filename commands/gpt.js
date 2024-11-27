@@ -12,7 +12,7 @@ module.exports = {
     if (!prompt) return sendMessage(senderId, { text: "Usage: gpt4 <question>" }, pageAccessToken);
 
     try {
-      const response = await axios.get(`https://api.kenliejugarap.com/freegpt-openai/?question=${encodeURIComponent(prompt)}`);
+      const response = await axios.get(`https://api.kenliejugarap.com/unity/?question=${encodeURIComponent(prompt)}`);
       const result = response.data.result;
       sendMessage(senderId, { text: result }, pageAccessToken);
     } catch (error) {
