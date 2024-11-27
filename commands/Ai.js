@@ -2,7 +2,7 @@ const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
-  name: 'aiv2',
+  name: 'ai',
   description: 'Xao Ai',
   usage: 'aiv2 [your Question or Message]',
   author: 'Gelie',
