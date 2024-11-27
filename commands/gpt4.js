@@ -12,9 +12,10 @@ module.exports = {
     if (!prompt) return sendMessage(senderId, { text: "Usage: gpt4 <question>" }, pageAccessToken);
 
     try {
-      const { data: { result } } = await axios.get(`https://api.kenliejugarap.com/freegpt-openai/?question=Hello%20from%20api.kenliejugarap.com${encodeURIComponent(prompt)}`);
+      const response = await axios.get(`https://api.kenliejugarap.com/freegpt-openai/?question=${encodeURIComponent(prompt)}`);
+      const result = response.data.result;
       sendMessage(senderId, { text: result }, pageAccessToken);
-    } catch {
+    } catch (error) {
       sendMessage(senderId, { text: 'There was an error generating the content. Please try again later.' }, pageAccessToken);
     }
   }
