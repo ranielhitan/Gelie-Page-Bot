@@ -2,20 +2,19 @@ const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
-  name: 'gpt4',
-  description: 'Interact with GPT-4o',
-  usage: 'gpt4 [your message]',
+  name: 'blackbox',
+  description: 'Interact with Blackbox GPT-4o',
+  usage: 'blackbox [your message]',
   author: 'coffee',
 
   async execute(senderId, args, pageAccessToken) {
     const prompt = args.join(' ');
-    if (!prompt) return sendMessage(senderId, { text: "Usage: gpt4 <question>" }, pageAccessToken);
+    if (!prompt) return sendMessage(senderId, { text: "Usage: blackbox <question>" }, pageAccessToken);
 
     try {
-      const response = await axios.get(`https://api.kenliejugarap.com/unity/?question=${encodeURIComponent(prompt)}&uid=${senderId}`);
-      const result = response.data.result;
+      const { data: { result } } = await axios.get(`https://api.kenliejugarap.com/blackbox-gpt4o/?text=${encodeURIComponent(prompt)}&uid=${senderId}`);
       sendMessage(senderId, { text: result }, pageAccessToken);
-    } catch (error) {
+    } catch {
       sendMessage(senderId, { text: 'There was an error generating the content. Please try again later.' }, pageAccessToken);
     }
   }
